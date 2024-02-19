@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface MealOptionsDBFrameRepository extends JpaRepository<MealOptionsDBFrame, Long> {
+	@Query("SELECT a FROM MealOptionsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime >= :layoverArrivalTime) OR (a.closeTime > :layoverArrivalTime AND a.openTime > a.closeTime))")
+	List<MealOptionsDBFrame> findOpenPlaces(@Param("layoverAirportId") String layoverAirportId, @Param("layoverArrivalTime") Double layoverArrivalTime);
 
 
 }

@@ -8,4 +8,6 @@ import java.util.List;
 
 @Repository
 public interface FreeTourDBFrameRepository extends JpaRepository<FreeTourDBFrame    , Long> {
+	List<FreeTourDBFrame> findByLayoverAirportId(String layoverAirportId);
+
 }
