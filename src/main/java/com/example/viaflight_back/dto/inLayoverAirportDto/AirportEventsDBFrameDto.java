@@ -1,6 +1,6 @@
 package com.example.viaflight_back.dto.inLayoverAirportDto;
 
-import com.example.viaflight.domain.frameAboutDB.inLayoverAirport.AirportEventsDBFrame;
+import com.example.viaflight_back.domain.inLayoverAirport.AirportEventsDBFrame;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
