@@ -1,4 +1,4 @@
-package com.example.viaflight.dto.frameAboutDB.inLayoverAirportDto;
+package com.example.viaflight_back.dto.inLayoverAirportDto;
 
 import com.example.viaflight.domain.frameAboutDB.inLayoverAirport.ShoppingOptionsDBFrame;
 import lombok.AllArgsConstructor;

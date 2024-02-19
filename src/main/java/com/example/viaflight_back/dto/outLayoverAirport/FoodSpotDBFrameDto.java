@@ -1,7 +1,7 @@
-package com.example.viaflight.dto.frameAboutDB.outLayoverAirport;
+package com.example.viaflight_back.dto.outLayoverAirport;
 
 
-import com.example.viaflight.domain.frameAboutDB.outLayoverAirport.FoodSpotDBFrame;
+import com.example.viaflight_back.domain.outLayoverAirport.FoodSpotDBFrame;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
