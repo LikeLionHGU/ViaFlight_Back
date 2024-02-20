@@ -91,7 +91,7 @@
 <h4>수행 작업</h4>
 <ul>
   <li>멘토진 확인받기</li>
-  <li>kakao map API (국외는 인지 잘 안됨.) -> Google map API로 바꾸기</li>
+  <li>kakao map API (국외는 인지 잘 안됨.) -> Google map API로 바꿀 예정</li>
   <li>명세서 만들기 (어디에 어떤 정보 있고, data명/type은 무엇이고..)</li>
   <li> postman으로 제대로 작동하는지 확인 </li>  
   <li> variable이름 싹 다 바꾸기 </li>
@@ -103,6 +103,25 @@
 </ul>
 
 <hr>
+
+<h3>※ 2024-02-20</h3>
+
+<h4>수행 작업</h4>
+<ul>
+  <li>S3 코드 작성 하기</li>
+  <li>작성한 S3 코드 기반, 이미지의 url 얻어내기 (SQL문 전체 수정)</li>
+  <li>google maps api로 바꾸기</li>
+  <li>frontend와 backend 연결하기 (CORS문제 해결) </li>
+</ul>
+
+<h4>명일 작업</h4>
+<ul>
+  <li>google maps api 로 얻어낸 결과 parsing하기</li>
+  <li>깃허브 코드 정리</li>
+</ul>
+
+<hr>
+
 
 <h1>학기 중 이어서 할 기능들</h1>
   <li> OAuth로 구글 로그인   </li>
