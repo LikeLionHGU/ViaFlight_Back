@@ -111,5 +111,4 @@ public class LayoverAirportDBFrame {
 
 	@Column(name = "shuttle_bus_out_airport_header", nullable = true)
 	private String shuttleBusOutAirportHeader;
-
 }
