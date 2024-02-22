@@ -932,7 +932,7 @@ VALUES ('싱가포르 라이온 시티 하이라이트 자전거 투어', 9, 24,
         NULL, 'https://www.getyourguide.com/ko-kr/singgaporeu-l170/singgaporeu-raion-siti-hairaiteu-bannajeol-jajeongeo-tueo-t327376?date_from=2024-02-23&date_to=2024-02-22&date_to=2024-02-22&ranking_uuid=0949774e-a80a-451f-8f70-36277f8f38b9&_pc=1,1',
         'paid_tour', 'https://elasticbeanstalk-ap-northeast-2-975049928260.s3.ap-northeast-2.amazonaws.com/viaF/da7bf0fb-df92-4ffa-8b11-1c71582a3e7abike_tour.jpg', 'SIN');
 
-
+-- -------------------------
 INSERT INTO paid_activity_db_frame
 (paid_activity_name, open_time, close_time, used_time, business_time, information, cost, homepage, type, image_url, layover_airport_id)
 VALUES
