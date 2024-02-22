@@ -842,7 +842,7 @@ Raffles Medical Group [1 Terminal] 출국장 2F (동쪽 D Gate 근처 | 서쪽
        , 'CLINICS & PHARMACIES'
        , '[ChangiFX, UOB, Travelex]  
 [ 1 Terminal ] 입국장 1F 수하물 홀 
-                        출국장 2F(C Gate 근처 | D Gate 근처) 
+                        출국장 2F(C Gate 근처 | D Gate 근처) gi
 [ 2 Terminal ] 입국장 1F
                         출국장 2F(E Gate 근처 | F Gate 근처)
                          출발/체크인 홀 2층(북쪽) 
