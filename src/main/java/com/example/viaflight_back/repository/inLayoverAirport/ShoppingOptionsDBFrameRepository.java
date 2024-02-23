@@ -11,7 +11,8 @@ import java.util.List;
 @Repository
 public interface ShoppingOptionsDBFrameRepository extends JpaRepository<ShoppingOptionsDBFrame, Long> {
 
-	@Query("SELECT a FROM ShoppingOptionsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime > :layoverArrivalTime) OR (a.closeTime <= :layoverArrivalTime AND a.openTime > a.closeTime AND :layoverArrivalTime < a.openTime + 24))")
+
+	@Query("SELECT a FROM ShoppingOptionsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime >= :layoverArrivalTime) OR (a.openTime > a.closeTime AND ((:layoverArrivalTime >= a.openTime) OR (:layoverArrivalTime < a.closeTime))))")
 	List<ShoppingOptionsDBFrame> findOpenPlaces(@Param("layoverAirportId") String layoverAirportId, @Param("layoverArrivalTime") Double layoverArrivalTime);
 
 }

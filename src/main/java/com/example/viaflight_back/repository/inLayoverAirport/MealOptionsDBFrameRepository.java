@@ -13,12 +13,8 @@ public interface MealOptionsDBFrameRepository extends JpaRepository<MealOptionsD
 
 	// todo : LocalDateTime 으로 변경
 
-	@Query("SELECT a FROM MealOptionsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime > :layoverArrivalTime) OR (a.closeTime < a.openTime AND (a.openTime <= :layoverArrivalTime OR :layoverArrivalTime < a.closeTime + 24)))")
 
-//	@Query("SELECT a FROM MealOptionsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime >= :layoverArrivalTime) OR (a.closeTime > :layoverArrivalTime AND a.openTime + 24 > a.closeTime AND a.openTime != a.closeTime + 24))")
+	@Query("SELECT a FROM MealOptionsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime >= :layoverArrivalTime) OR (a.openTime > a.closeTime AND ((:layoverArrivalTime >= a.openTime) OR (:layoverArrivalTime < a.closeTime))))")
 	List<MealOptionsDBFrame> findOpenPlaces(@Param("layoverAirportId") String layoverAirportId, @Param("layoverArrivalTime") Double layoverArrivalTime);
-	// opentime: 6 , closetime: 1, arrivaltime: 1:10
-	// closetime + 24  < arrival
-	// closetime < open
 
 }
