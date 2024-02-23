@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface RestsDBFrameRepository extends JpaRepository<RestsDBFrame, Long> {
-	@Query("SELECT a FROM RestsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime >= :layoverArrivalTime) OR (a.closeTime > :layoverArrivalTime AND a.openTime > a.closeTime))")
+	@Query("SELECT a FROM RestsDBFrame a WHERE a.layoverAirportId = :layoverAirportId AND ((a.openTime <= :layoverArrivalTime AND a.closeTime >= :layoverArrivalTime) OR (a.closeTime > :layoverArrivalTime AND a.openTime + 24 > a.closeTime AND a.openTime != a.closeTime + 24))")
 	List<RestsDBFrame> findOpenPlaces(@Param("layoverAirportId") String layoverAirportId, @Param("layoverArrivalTime") Double layoverArrivalTime);
 
 }

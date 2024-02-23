@@ -804,6 +804,7 @@ VALUES ('Discover Singapore', '6', '12', 'AM 6:00 - AM 12:00',
 
 
 -- LayoverAirport
+-- delete from layover_airport_db_frame where layover_airport_id = 'SIN';
 INSERT INTO layover_airport_db_frame (layover_airport_id, layover_airport_name, layover_airport_eng_name, wifi, wifi_header, smoking_area, smoking_header, shower_facilities, shower_facilities_header,
                                       pharmacy, clinics_pharmacies_header, currency_exchange, currency_exchange_header, luggage_storage, luggage_storage_header, information_center, information_center_header, skytrain, skytrain_in_airport_header,
                                       shuttle_bus, shuttle_bus_in_airport_header, train_mrt, train_mrt_out_airport_header, taxi, taxi_out_airport_header, public_bus, public_bus_out_airport_header, airport_transfer_bus, airport_transfer_out_airport_header, airport_shuttle_bus, shuttle_bus_out_airport_header)
@@ -842,7 +843,7 @@ Raffles Medical Group [1 Terminal] 출국장 2F (동쪽 D Gate 근처 | 서쪽
        , 'CLINICS & PHARMACIES'
        , '[ChangiFX, UOB, Travelex]  
 [ 1 Terminal ] 입국장 1F 수하물 홀 
-                        출국장 2F(C Gate 근처 | D Gate 근처) gi
+                        출국장 2F(C Gate 근처 | D Gate 근처) 
 [ 2 Terminal ] 입국장 1F
                         출국장 2F(E Gate 근처 | F Gate 근처)
                          출발/체크인 홀 2층(북쪽) 
@@ -866,21 +867,67 @@ Raffles Medical Group [1 Terminal] 출국장 2F (동쪽 D Gate 근처 | 서쪽
 [ 3 Terminal ] 입국장 1F, 출국장 2F 체크인 카운터 중앙, 출국장 2F 환승 라운지 중앙 및 양쪽 
 [ 4 Terminal ] 입국장 1F, 출국장 2F 체크인 카운터 중앙, 출국장 2F 환승 라운지 양쪽'
        , 'INFO CENTER'
-       , 'NULL'
-       , 'SKY TRAIN'
-       , 'NULL'
-       , 'SHUTTLE SERVICE'
-       , 'NULL'
-       , 'TRAIN MRT'
-       , 'NULL'
-       , 'TAXI'
-       , 'NULL'
-       , 'PUBLIC BUS'
-       , 'NULL'
-       , 'AIRPORT TRANSFER'
-       , 'NULL'
-       , 'SHUTTLE SERVICE');
+       , 'T1, T2, T3 는 스카이 트레인 또는 도보로 이동이 가능합니다.
+T4는 셔틀 버스로만 이동할 수 있습니다.  
 
+[스카이 트레인] 배차간격 4~5분 
+T1 <-> T2 (환승구역 D<->E) | T1 <-> T3 (환승구역 C <-> B) | T2 <-> T3 (환승구역 E <-> B) 
+매일 AM 04:30 - AM 01:30
+
+ T2 <-> T3 (환승구역 F<->A) 
+매일 AM 05:00 - AM 02:00'
+       , 'SKY TRAIN'
+       , '[공공 셔틀버스] T1, T2, T3 <-> T4 (T1 C21 Gate, T3에서 출발) 
+[직행 서비스] T1/Jewel -> T4 (매일 AM 06:00 - AM 12:00 | 배차간격 9~26분)
+                       T2/MRT -> T4 (매일 AM 06:00 - AM 12:00) | 배차간격 6~26분)
+
+ [루프 서비스] T2/MRT - T1/쥬얼 - T4 (AM 12:00 - AM 06:00 | 배차간격 30분) 
+T1/Jewel 탑승, 하차 지점 : T1 출발 중앙 도로변 | T2/MRT 탑승, 하차 지점 : T2 도착 1번 픽업도어 
+T4 탑승 지점 : T4 도착 버스 라운지 | T4 하차 지점 : T4 출발 4번 문  
+
+[환승 셔틀버스] T1 C21 게이트 > T3 입국심사대 A > T4 환승 라운지 
+OPEN 24/7, 배차간격 13분, T4 > T1: 18분 | T1 > T3: 6분 | T3 > T4: 12분'
+       , 'SHUTTLE SERVICE'
+       , '월-토 : AM 5:31 - PM 11:18 | 일요일 및 공휴일 : AM 05:59 - PM 11:18 
+Pasir Ris 연결 막차 : 매일 AM 00:06 | 배차 간격 : 7-9분
+소요 시간 : 창이 공항-시티홀역, 약 40분 소요 
+
+결제 옵션 : 마스터카드/비자/NETS 은행 카드, 모바일 지갑 및 Singapore Tourist Pass포함  
+(해외 카드로 결제 시 관리 수수료 부과) 
+시티홀역 기준 성인 1인당 SG $1.88 | 만4세이하 무료 | 1회권 (성인, 아동 요금 동일) 사용 시 SG $2.6'
+       , 'TRAIN MRT'
+       , '[ Terminal 1, 2, 3, 4 ]도착 구역에 있는 택시 정류장에서 탑승 가능합니다.
+시내까지는 약 2~30분 정도 소요되며 비용은 약 S$20~S$40 정도이며 미터기로 측정됩니다. 
+월-일 PM 5:00 - PM 11:59 : S$8 공항 추가 요금 
+그 외 모든 시간 : 공항 추가 요금 S$6  
+
+심야 할증료 (AM 12:00 - AM 5:59) : 최종 미터 요금의 50% 
+피크 시간대 할증료
+(월-금 PM 5:00 - PM 11:59 | 월-일 AM 10:00 ~ PM 1:59 | 주말 및 공휴일) : 최종 요금의 25%'
+       , 'TAXI'
+       , '[ Terminal 1, 2, 3 ] 지하 버스 정류장에서 24, 27, 34, 36, 53, 110, 858번 버스 탑승 가능 
+[ Terminal 4 ] 주차장 4B 옆 버스 정류장에서 24, 34, 36, 110 버스 탑승 가능 
+SATS 기내 케이터링 센터 1 근처 버스 정류장에서 27, 53, 858 버스 탑승 가능  
+
+평일 AM 06:00 - PM 10:50 | 주말 AM 05:57 - PM 11:52 
+배차 간격 : 8-10분 
+결제 옵션 : 마스터카드/비자/NETS 은행 카드, 모바일 지갑 및 Singapore Tourist Pass포함
+(해외 카드로 결제 시 관리 수수료 부과) 
+소요시간 : 창이 공항 2 터미널 - 캐피찰 블로드 약 1시간 소요(시티 홀역 근처 정류장) 
+카드 사용 시 성인 SG $2 | 만 4세 이하 무료 | 1회권(성인 & 아동 요금 동일) SG $2.6  '
+       , 'PUBLIC BUS'
+       , '각 터미널 1층 입국장 안내 카운터 옆 24시간 지상 운송 컨시어지(GTC)에 문의
+
+교통 옵션 : 
+4인승 차량(싱가포르 내 모든 목적지까지 편도당 S$55.00) 
+7인승 차량(싱가포르 내 모든 목적지까지 편도당 S$60.00)'
+       , 'AIRPORT TRANSFER'
+       , '[공항 셔틀 버스]
+각 터미널 1층 입국장 안내 카운터 옆 24시간 지상 운송 컨시어지(GTC)에 문의
+
+- 성인 1인당 S$10, 어린이(12세 미만) 1인당 S$7의 요금으로 시내에 위치한  대부분의 호텔까지 탑승할 수 있습니다.
+- AM 07:00 - PM 11:00 매 시간 출발'
+       , 'SHUTTLE SERVICE');
 
 -- FoodSpot
 INSERT INTO food_spot_db_frame (food_spot_name, open_time, close_time, business_time, information, phone_number, type, image_url, layover_airport_id)
