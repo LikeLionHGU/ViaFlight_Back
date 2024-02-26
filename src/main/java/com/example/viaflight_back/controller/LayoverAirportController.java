@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://viaflight.netlify.app")
 public class LayoverAirportController {
 
 	private final AllLayoverAirportInfoService responseService;
